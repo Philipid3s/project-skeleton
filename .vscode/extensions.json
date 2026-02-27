@@ -16,6 +16,9 @@
     "shd101wyy.markdown-preview-enhanced",
 
     // DotENV — syntax highlighting for .env.example files
-    "mikestead.dotenv"
+    "mikestead.dotenv",
+
+    // Prettier — code formatter, pairs with .prettierrc and editor.defaultFormatter setting
+    "esbenp.prettier-vscode"
   ]
 }

@@ -16,6 +16,7 @@
   // noisy reformatting commits when a human opens a file after an agent.
   "editor.formatOnSave": true,
   "editor.formatOnPaste": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
 
   // ─── File nesting (keeps explorer readable during agentic work) ───────────
   "explorer.fileNesting.enabled": true,
