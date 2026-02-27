@@ -5,8 +5,9 @@ node_modules/
 
 # Environment files — NEVER commit these
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
+!.env.*.example
 
 # Build outputs
 dist/
@@ -23,10 +24,16 @@ coverage/
 logs/
 *.log
 npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
 # OS
 .DS_Store
 Thumbs.db
+
+# Editor swap files
+*.swp
+*.swo
 
 # IDE
 .vscode/*
@@ -34,7 +41,7 @@ Thumbs.db
 !.vscode/settings.json
 .idea/
 
-# Docker volumes (local)
+# Docker volumes (local) — add service-specific volume paths after stack selection
 postgres-data/
 
 # Temp
