@@ -4,7 +4,12 @@
 
 orchestrator:
   paths:
-    - "**"  # Full access — conflict resolution only
+    - "**"  # Full access — conflict resolution and cross-cutting files only
+  primary_write_paths:
+    - "AGENTS.md"
+    - "docs/agents/**"
+    - "docs/sessions/**"   # Session handoff files
+    - "docs/adr/**"        # When no specialist is assigned the decision
   note: Must not make domain changes directly. Delegates to specialists.
 
 frontend-agent:
@@ -18,6 +23,9 @@ backend-agent:
 docs-agent:
   paths:
     - "docs/**"
+  excludes:
+    - "docs/sessions/**"   # Owned by orchestrator
+    - "docs/agents/**"     # Owned by orchestrator
 
 platform-agent:
   paths:

@@ -66,6 +66,11 @@ Each agent operates only within its declared paths. The orchestrator is the sole
 resolver of cross-area conflicts. Every delegated task must follow the handoff
 format defined in [orchestrator.md](docs/agents/orchestrator.md).
 
+**Session continuity:** At the end of a long session or before starting a new one,
+the orchestrator writes a session handoff file to `docs/sessions/` using the template
+at `docs/sessions/handoff-template.md`. Every new session on in-progress work must
+start by reading the latest handoff file.
+
 ## Agent Behavior Guidelines
 
 - Prefer editing existing files over creating new ones.

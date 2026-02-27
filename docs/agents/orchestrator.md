@@ -6,7 +6,8 @@ cross-area conflicts. The orchestrator does **not** make domain changes directly
 
 ## File Ownership
 Full read access to all paths. Write access only to resolve conflicts or update
-cross-cutting files (e.g., root `AGENTS.md`, this `docs/agents/` directory).
+cross-cutting files (e.g., root `AGENTS.md`, this `docs/agents/` directory,
+`docs/sessions/`).
 
 ## Inputs
 - User story or feature request
@@ -17,6 +18,7 @@ cross-cutting files (e.g., root `AGENTS.md`, this `docs/agents/` directory).
 - Delegated task packets (one per specialist agent) — see handoff format below
 - Integration report after all specialists complete
 - Updated `docs/adr/` entry if a significant decision was made
+- Session handoff file in `docs/sessions/` at end of session or when context is long
 
 ## Task Handoff Format
 Each delegated task must include:
@@ -38,7 +40,14 @@ task:
 - No unresolved cross-area conflicts
 - Integration gate passed (# TODO: define after CI stack is chosen)
 
+## Session Handoff
+When a session is ending or context is getting long, write a handoff file:
+- Path: `docs/sessions/handoff-YYYY-MM-DD.md`
+- Use the template at `docs/sessions/handoff-template.md`
+- The next session must start by reading the latest handoff file
+
 ## Forbidden
 - Direct domain changes to `frontend/**`, `backend/**`
 - Bypassing specialist ownership to resolve conflicts faster
 - Delegating without explicit acceptance criteria
+- Starting a new session on in-progress work without writing a handoff first
