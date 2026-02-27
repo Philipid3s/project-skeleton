@@ -15,7 +15,7 @@ this creates risk of conflicting changes, unclear ownership, and inconsistent ou
 Adopt an **orchestrator + specialist agents** model.
 
 - A single **orchestrator** plans work, delegates tasks, and resolves cross-area conflicts.
-- Specialist agents (**frontend**, **backend**, **docs**, **platform**) each own a defined
+- Specialist agents (**frontend**, **backend**, **docs**, **platform**, **qa**) each own a defined
   file scope and operate within it autonomously.
 - Agent contracts are documented in `docs/agents/` — one file per agent.
 - File ownership is declared in `docs/agents/ownership.yml` for both human reference
