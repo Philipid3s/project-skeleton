@@ -47,3 +47,8 @@ postgres-data/
 # Temp
 tmp/
 .tmp/
+
+# Session handoff files (per-user, not shared across collaborators)
+docs/sessions/*
+!docs/sessions/README.md
+!docs/sessions/handoff-template.md
