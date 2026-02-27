@@ -1,0 +1,7 @@
+FROM alpine:3.20
+
+WORKDIR /workspace
+COPY . .
+
+# Replace this file with your chosen frontend dev image and dev server command.
+CMD ["sh", "-c", "echo 'Frontend dev Dockerfile placeholder'; sleep infinity"]

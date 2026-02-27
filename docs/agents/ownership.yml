@@ -1,0 +1,33 @@
+# Agent file ownership map.
+# Each agent may only modify files within its declared paths.
+# The orchestrator may read all paths and write to any path to resolve conflicts.
+
+orchestrator:
+  paths:
+    - "**"  # Full access — conflict resolution only
+  note: Must not make domain changes directly. Delegates to specialists.
+
+frontend-agent:
+  paths:
+    - "frontend/**"
+
+backend-agent:
+  paths:
+    - "backend/**"
+
+docs-agent:
+  paths:
+    - "docs/**"
+
+platform-agent:
+  paths:
+    - "docker-compose.yml"
+    - "docker-compose.dev.yml"
+    - "frontend/Dockerfile"
+    - "frontend/Dockerfile.dev"
+    - "backend/Dockerfile"
+    - "backend/Dockerfile.dev"
+    - ".github/**"
+    - ".env.example"
+    - "frontend/.env.example"
+    - "backend/.env.example"

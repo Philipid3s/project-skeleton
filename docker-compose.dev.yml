@@ -1,0 +1,26 @@
+name: project-skeleton-dev
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/workspace
+    env_file:
+      - ./frontend/.env.local
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend:/workspace
+    env_file:
+      - ./backend/.env

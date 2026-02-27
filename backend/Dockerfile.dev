@@ -1,0 +1,7 @@
+FROM alpine:3.20
+
+WORKDIR /workspace
+COPY . .
+
+# Replace this file with your chosen backend dev image and startup command.
+CMD ["sh", "-c", "echo 'Backend dev Dockerfile placeholder'; sleep infinity"]
