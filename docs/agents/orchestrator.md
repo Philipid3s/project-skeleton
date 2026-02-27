@@ -38,6 +38,7 @@ task:
 ## Done Criteria
 - All delegated tasks returned with verification passed
 - No unresolved cross-area conflicts
+- QA report produced by `qa-agent` with verdict PASS (see `docs/reports/`)
 - Integration gate passed (# TODO: define after CI stack is chosen)
 
 ## Session Handoff

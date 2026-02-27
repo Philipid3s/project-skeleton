@@ -59,6 +59,7 @@ See [ADR 0002](docs/adr/0002-multi-agent-pattern.md) for the decision record.
 | backend-agent | `backend/**` | [backend-agent.md](docs/agents/backend-agent.md) |
 | docs-agent | `docs/**` | [docs-agent.md](docs/agents/docs-agent.md) |
 | platform-agent | compose, service Dockerfiles, CI, env templates | [platform-agent.md](docs/agents/platform-agent.md) |
+| qa-agent | read-only on specs + implementation, writes to `docs/reports/` | [qa-agent.md](docs/agents/qa-agent.md) |
 
 Machine-readable ownership map: [`docs/agents/ownership.yml`](docs/agents/ownership.yml)
 

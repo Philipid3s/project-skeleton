@@ -1,7 +1,8 @@
 # Backend Agent
 
 ## Scope
-API endpoints, domain logic, data layer, and backend tests.
+API endpoints, domain logic, data layer, and backend unit/integration tests.
+Acceptance tests are authored by `qa-agent` in `tests/acceptance/`.
 
 ## File Ownership
 `backend/**`
@@ -20,7 +21,7 @@ API endpoints, domain logic, data layer, and backend tests.
 - All acceptance criteria from the task packet met
 - No files modified outside `backend/**`
 - Lint passes (# TODO: fill after stack selection)
-- Tests pass (# TODO: fill after stack selection)
+- Unit and integration tests pass (# TODO: fill after stack selection)
 - API changes flagged to orchestrator for delegation to docs-agent
 - No hardcoded secrets or environment values
 

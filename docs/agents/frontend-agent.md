@@ -1,7 +1,8 @@
 # Frontend Agent
 
 ## Scope
-UI architecture, components, routing, and frontend tests.
+UI architecture, components, routing, and frontend unit/integration tests.
+Acceptance tests are authored by `qa-agent` in `tests/acceptance/`.
 
 ## File Ownership
 `frontend/**`
@@ -20,7 +21,7 @@ UI architecture, components, routing, and frontend tests.
 - All acceptance criteria from the task packet met
 - No files modified outside `frontend/**`
 - Lint passes (# TODO: fill after stack selection)
-- Tests pass (# TODO: fill after stack selection)
+- Unit and integration tests pass (# TODO: fill after stack selection)
 - No hardcoded secrets or environment values
 
 ## Forbidden

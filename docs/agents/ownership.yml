@@ -26,6 +26,19 @@ docs-agent:
   excludes:
     - "docs/sessions/**"   # Owned by orchestrator
     - "docs/agents/**"     # Owned by orchestrator
+    - "docs/reports/**"    # Owned by qa-agent
+
+qa-agent:
+  read_paths:
+    - "docs/specs/**"
+    - "docs/api/openapi.yml"
+    - "docs/adr/**"
+    - "frontend/**"
+    - "backend/**"
+  write_paths:
+    - "docs/reports/**"         # Compliance reports
+    - "tests/acceptance/**"     # Spec-driven acceptance tests
+  note: Read-only on implementation and spec files. Writes acceptance tests and compliance reports.
 
 platform-agent:
   paths:
