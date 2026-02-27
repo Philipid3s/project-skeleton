@@ -1,6 +1,6 @@
 # Project Skeleton
 
-Generic full-stack template for future projects with a frontend, backend, and docs.
+Stack-agnostic full-stack starter template with a built-in multi-agent AI workflow — orchestrator + specialist agents (frontend, backend, docs, platform, QA) with defined ownership and handoff protocols.
 
 ## Goals
 
@@ -44,6 +44,6 @@ The default service containers are placeholders and must be replaced once your s
 
 ## Contributing
 
-1. Branch from `develop`.
+1. Branch from `master`.
 2. Use the PR template in `.github/PULL_REQUEST_TEMPLATE.md`.
 3. Add an ADR in `docs/adr/` for major architecture decisions.
