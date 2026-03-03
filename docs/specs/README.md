@@ -2,13 +2,32 @@
 
 This folder stores functional and technical specifications before implementation.
 
-## Suggested Structure
+## Current Structure
 
 ```text
 specs/
-|-- functional/     # User stories and requirements
-|-- technical/      # Design and implementation plans
-`-- wireframes/     # UI wireframes and mockups
+`-- technical/
+    `-- agent-runtime/
+        |-- examples/
+        |-- state-model.md
+        |-- task.schema.json
+        |-- tool.contract.json
+        `-- runtime-errors.md
 ```
 
-Create subfolders as needed and link related ADRs when architecture decisions are involved.
+## Agent Runtime Contract
+
+- `technical/agent-runtime/task.schema.json`
+  - Canonical task submission envelope.
+- `technical/agent-runtime/tool.contract.json`
+  - Canonical tool call request/response envelope.
+- `technical/agent-runtime/runtime-errors.md`
+  - Error classification and retry semantics.
+- `technical/agent-runtime/state-model.md`
+  - Short-term vs long-term memory model and promotion/retrieval rules.
+- `technical/agent-runtime/examples/`
+  - Fixture payloads and expected outcomes for schema validation.
+
+Related ADR:
+- `docs/adr/0003-agent-runtime-contract-and-retry-policy.md`
+- `docs/adr/0004-agent-state-model-short-term-vs-long-term-memory.md`
