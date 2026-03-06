@@ -113,6 +113,22 @@ When triggered, the orchestrator should:
 - summarize completed work, decisions, current state, open questions, next task,
   files modified, and risks/watch points
 
+## Project Kickoff Bootstrap
+
+When this template is used to start a real project, the first bootstrap step is
+to replace the skeleton identity with the new project identity.
+
+- Ask for the project name if the kickoff request does not provide it
+- Rename the project across repository-facing documentation
+- Remove or replace skeleton-repository clone links and placeholder repo references
+- Make README-style files read like the new project, not like a generic template
+
+At minimum, review and update:
+- `README.md`
+- `AGENTS.md`
+- relevant files under `docs/`
+- placeholder clone URLs and repository references
+
 ## Agent Behavior Guidelines
 
 - Prefer editing existing files over creating new ones.

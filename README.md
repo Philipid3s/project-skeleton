@@ -46,14 +46,16 @@ the runtime contracts in `docs/specs/technical/agent-runtime/`.
 
 ## How To Use This Template
 
-1. Review ADR 0002, ADR 0003, and ADR 0004 to understand the default
+1. Rename the template to your project name and remove skeleton-specific clone
+   links or repository references.
+2. Review ADR 0002, ADR 0003, and ADR 0004 to understand the default
    multi-agent and runtime architecture.
-2. Choose the implementation stack for the frontend, backend, workers, and
+3. Choose the implementation stack for the frontend, backend, workers, and
    deployment tooling.
-3. Replace `frontend/Dockerfile*` and `backend/Dockerfile*`.
-4. Implement services around the runtime baseline documented in
+4. Replace `frontend/Dockerfile*` and `backend/Dockerfile*`.
+5. Implement services around the runtime baseline documented in
    `docs/specs/technical/agent-runtime/`.
-5. Update `docs/api/openapi.yml` and add ADRs in `docs/adr/` for stack choices
+6. Update `docs/api/openapi.yml` and add ADRs in `docs/adr/` for stack choices
    and major architecture decisions.
 
 ## Contributing
