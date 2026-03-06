@@ -20,7 +20,7 @@ form an audit trail of QA checks over the project lifecycle.
 
 Every report should make the authoring role explicit.
 
-- QA reports must include `Prepared by: qa-agent`
+- QA reports must include `Prepared By: qa-agent`
 - If another report type is added later, it should include the responsible agent
   role in the same format
 

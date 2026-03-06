@@ -25,7 +25,7 @@ cross-cutting files (e.g., root `AGENTS.md`, this `docs/agents/` directory,
   `Role: orchestrator`
 - When presenting specialist outputs, the orchestrator names the originating
   agent explicitly
-- Durable outputs written by the orchestrator must include a `Prepared by`
+- Durable outputs written by the orchestrator must include a `Prepared By`
   field or equivalent label
 
 ## Task Handoff Format
@@ -47,7 +47,9 @@ task:
 - All delegated tasks returned with verification passed
 - No unresolved cross-area conflicts
 - QA report produced by `qa-agent` with verdict PASS (see `docs/reports/`)
-- Integration gate passed (# TODO: define after CI stack is chosen)
+- Integration gate passed in `.github/workflows/ci.yml`:
+  `validate-agent-runtime-contracts`, `lint-and-test-frontend`,
+  `lint-and-test-backend`, and `docker-build` must all pass
 
 ## Session Handoff
 When a session is ending or context is getting long, write a handoff file:

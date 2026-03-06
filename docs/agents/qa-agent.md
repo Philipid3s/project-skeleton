@@ -28,23 +28,21 @@ a passing QA report.
 
 ## Inputs
 - Task packet from orchestrator (objective + acceptance criteria)
-- Functional specs: `docs/specs/functional/`
-- Technical specs: `docs/specs/technical/`
+- Project specs in `docs/specs/`
 - API spec: `docs/api/openapi.yml`
 - Relevant ADRs: `docs/adr/`
 - Implementation: `frontend/**`, `backend/**`
 
 ## Outputs
 Acceptance tests written to `tests/acceptance/` derived directly from spec files.
-Test naming must reference the spec (e.g., `tests/acceptance/auth/login.spec.*`
-maps to `docs/specs/functional/auth.md`).
+Test naming must reference the source spec file directly.
 
 A compliance report written to `docs/reports/qa-YYYY-MM-DD[-N].md` containing:
 
 ```markdown
 ## QA Report - YYYY-MM-DD
 
-Prepared by: qa-agent
+Prepared By: qa-agent
 
 ### Task Reference
 <objective from task packet>
