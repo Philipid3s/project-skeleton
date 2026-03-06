@@ -1,7 +1,9 @@
 # AGENTS.md
 
 Universal agent instructions for this repository.
-Consumed by OpenAI Codex (`AGENTS.md`) and Claude Code (imported via `@AGENTS.md` in `CLAUDE.md`).
+Designed to be usable from any agentic IDE or CLI that supports in-repo
+instruction files. `AGENTS.md` is the primary shared contract; tool-specific
+entrypoints such as `CLAUDE.md` should import or reference it.
 
 ---
 

@@ -1,8 +1,8 @@
-# AI Agentic Development — Useful Links & Best Practices
+# AI Agentic Development - Useful Links & Best Practices
 
-A curated reference for developers working with AI coding agents, covering both
-**Claude Code** (Anthropic) and **OpenAI Codex**, plus the shared ecosystem standards
-they both participate in.
+A curated reference for developers working with AI coding agents across multiple
+agentic IDEs and CLIs. It includes shared workflow conventions plus
+tool-specific references where they matter.
 
 ---
 
@@ -36,7 +36,9 @@ reports so the origin of a decision or summary remains clear after the chat ends
 
 ---
 
-## Claude Code
+## Tool-Specific References
+
+### Claude Code
 
 | Resource | Description |
 |---|---|
@@ -51,18 +53,14 @@ reports so the origin of a decision or summary remains clear after the chat ends
 
 ### Key concepts
 
-- **CLAUDE.md** — loaded at the start of every session; define commands, style,
-  workflow rules, and agent ownership maps here.
-- **Skills** (`.claude/skills/`) — reusable, invocable prompt templates stored in
-  the repo.
-- **Hooks** — shell commands that fire on agent events (pre-tool, post-tool, etc.)
-  to enforce guardrails or trigger side-effects.
-- **MCP servers** — give the agent typed, sandboxed access to external tools
-  (databases, APIs, filesystems) without prompt injection risk.
+- **CLAUDE.md** - loaded at the start of every session; define commands, style, workflow rules, and agent ownership maps here.
+- **Skills** (`.claude/skills/`) - reusable, invocable prompt templates stored in the repo.
+- **Hooks** - shell commands that fire on agent events (pre-tool, post-tool, etc.) to enforce guardrails or trigger side-effects.
+- **MCP servers** - give the agent typed, sandboxed access to external tools (databases, APIs, filesystems) without prompt injection risk.
 
 ---
 
-## OpenAI Codex
+### OpenAI Codex
 
 | Resource | Description |
 |---|---|
@@ -75,12 +73,9 @@ reports so the origin of a decision or summary remains clear after the chat ends
 
 ### Key concepts
 
-- **AGENTS.md** — open format consumed by Codex, Claude Code, Amp, Cursor, and
-  others. Layer global overrides (`AGENTS.override.md`) on top of repo-level files.
-- **Test integration** — Codex will run test commands listed in AGENTS.md; document
-  them explicitly.
-- **AAIF (Agentic AI Foundation)** — cross-vendor standards effort; AGENTS.md is
-  part of this convergence alongside MCP and Skills.
+- **AGENTS.md** - open format consumed by Codex, Claude Code, Amp, Cursor, and others. Layer global overrides (`AGENTS.override.md`) on top of repo-level files.
+- **Test integration** - Codex will run test commands listed in AGENTS.md; document them explicitly.
+- **AAIF (Agentic AI Foundation)** - cross-vendor standards effort; AGENTS.md is part of this convergence alongside MCP and Skills.
 
 ---
 
@@ -94,7 +89,7 @@ Connects agents to tools and data sources through a typed, sandboxed protocol.
 | Resource | Description |
 |---|---|
 | [modelcontextprotocol.io](https://modelcontextprotocol.io/specification/2025-11-25) | Official spec |
-| [Wikipedia — MCP](https://en.wikipedia.org/wiki/Model_Context_Protocol) | Neutral overview |
+| [Wikipedia - MCP](https://en.wikipedia.org/wiki/Model_Context_Protocol) | Neutral overview |
 | [Code execution with MCP (Anthropic Engineering)](https://www.anthropic.com/engineering/code-execution-with-mcp) | Deep dive on context efficiency |
 | [mcp-agent (lastmile-ai)](https://github.com/lastmile-ai/mcp-agent) | OSS framework for MCP-based agents |
 
@@ -105,22 +100,15 @@ handles agent-to-tool communication).
 
 ---
 
-## Multi-Agent Architecture — Best Practices
+## Multi-Agent Architecture - Best Practices
 
-1. **Declare ownership explicitly** — use `docs/agents/ownership.yml` (or
-   equivalent) so each agent knows which paths it may write.
-2. **Single orchestrator for conflicts** — specialist agents own their area;
-   only the orchestrator resolves cross-area decisions.
-3. **Instructions in-repo, not in prompts** — AGENTS.md / CLAUDE.md keep
-   instructions version-controlled and auditable.
-4. **Context efficiency matters** — model accuracy drops with large context
-   windows; use MCP to load tools on demand rather than front-loading everything.
-5. **Session continuity** — write handoff files between sessions
-   (see `docs/sessions/handoff-template.md`) so agents can resume cleanly.
-6. **Sandbox risky operations** — use permission allowlists and OS-level
-   sandboxing before running destructive commands.
-7. **Test commands in AGENTS.md** — every agent must know how to run and verify
-   tests for its area.
+1. **Declare ownership explicitly** - use `docs/agents/ownership.yml` (or equivalent) so each agent knows which paths it may write.
+2. **Single orchestrator for conflicts** - specialist agents own their area; only the orchestrator resolves cross-area decisions.
+3. **Instructions in-repo, not in prompts** - AGENTS.md / CLAUDE.md keep instructions version-controlled and auditable.
+4. **Context efficiency matters** - model accuracy drops with large context windows; use MCP to load tools on demand rather than front-loading everything.
+5. **Session continuity** - write handoff files between sessions (`docs/sessions/handoff-template.md`) so agents can resume cleanly.
+6. **Sandbox risky operations** - use permission allowlists and OS-level sandboxing before running destructive commands.
+7. **Test commands in AGENTS.md** - every agent must know how to run and verify tests for its area.
 
 ---
 
