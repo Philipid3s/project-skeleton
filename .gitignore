@@ -48,7 +48,8 @@ postgres-data/
 tmp/
 .tmp/
 
-# Session handoff files (per-user, not shared across collaborators)
+# Session handoff files
+# Keep the docs/template tracked, but do not share generated handoff logs.
 docs/sessions/*
 !docs/sessions/README.md
 !docs/sessions/handoff-template.md

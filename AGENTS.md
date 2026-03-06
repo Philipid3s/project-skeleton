@@ -93,6 +93,26 @@ the orchestrator writes a session handoff file to `docs/sessions/` using the tem
 at `docs/sessions/handoff-template.md`. Every new session on in-progress work must
 start by reading the latest handoff file.
 
+### Session Handoff Trigger
+
+Treat a plain-language session-close message as an instruction to write the
+handoff file before ending the session.
+
+Equivalent trigger phrases include:
+- `end of session`
+- `handoff session`
+- `write the handoff`
+- `that's all for today`
+- `we stop here`
+- `let's continue later`
+
+When triggered, the orchestrator should:
+- create or update `docs/sessions/handoff-YYYY-MM-DD.md`
+- use `docs/sessions/handoff-template.md`
+- set `Prepared By` to the active role, usually `orchestrator`
+- summarize completed work, decisions, current state, open questions, next task,
+  files modified, and risks/watch points
+
 ## Agent Behavior Guidelines
 
 - Prefer editing existing files over creating new ones.

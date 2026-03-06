@@ -31,6 +31,20 @@ handoff-2026-02-27-2.md
 - After completing a major milestone, before starting the next one
 - When switching from one agent to another on the same topic
 
+## Plain-Language Triggers
+
+Informal user phrases should also trigger handoff behavior.
+
+Examples:
+- `end of session`
+- `handoff session`
+- `that's all for today`
+- `we stop here`
+- `let's continue later`
+
+When one of these appears, the orchestrator should treat it as a request to
+write the session handoff before closing out.
+
 ## Who Writes It
 
 The **orchestrator** is responsible for writing handoff files.
