@@ -11,17 +11,19 @@ Acceptance tests are authored by `qa-agent` in `tests/acceptance/`.
 - Task packet from orchestrator
 - OpenAPI spec at `docs/api/openapi.yml` (read-only reference)
 - Wireframes or specs from `docs/specs/` (read-only reference)
+- Agent runtime baseline in `docs/specs/technical/agent-runtime/` when frontend
+  behavior depends on task, tool, or memory flows
 
 ## Outputs
 - Changed files list (within `frontend/**`)
 - Risk summary (breaking changes, dependency additions, known gaps)
-- Verification run result (# TODO: define lint/test commands after stack selection)
+- Verification run result (# TODO: define service-specific lint/test commands)
 
 ## Done Criteria
 - All acceptance criteria from the task packet met
 - No files modified outside `frontend/**`
-- Lint passes (# TODO: fill after stack selection)
-- Unit and integration tests pass (# TODO: fill after stack selection)
+- Lint passes (# TODO: fill after implementation stack selection)
+- Unit and integration tests pass (# TODO: fill after implementation stack selection)
 - No hardcoded secrets or environment values
 
 ## Forbidden

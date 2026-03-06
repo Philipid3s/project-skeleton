@@ -6,6 +6,36 @@ they both participate in.
 
 ---
 
+## Repo Baseline
+
+This repository is an AI-agent system skeleton with a default internal baseline:
+
+- `docs/adr/0002-multi-agent-pattern.md` defines the orchestrator + specialist workflow.
+- `docs/adr/0003-agent-runtime-contract-and-retry-policy.md` defines the runtime contract.
+- `docs/adr/0004-agent-state-model-short-term-vs-long-term-memory.md` defines the state model.
+- `docs/specs/technical/agent-runtime/` contains the active runtime specifications.
+
+Implementation stack choices still need project-specific ADRs, but the
+agent-runtime baseline is part of the template by default.
+
+## Visible Roles in Chat
+
+Many coding-agent interfaces show only one assistant stream even when a
+multi-agent workflow exists underneath. In this repository, the visible
+convention is to label outputs with the active role:
+
+- `Role: orchestrator`
+- `Role: frontend-agent`
+- `Role: backend-agent`
+- `Role: docs-agent`
+- `Role: platform-agent`
+- `Role: qa-agent`
+
+Use the same role labels in durable artifacts such as handoff files and QA
+reports so the origin of a decision or summary remains clear after the chat ends.
+
+---
+
 ## Claude Code
 
 | Resource | Description |

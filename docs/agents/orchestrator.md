@@ -15,10 +15,18 @@ cross-cutting files (e.g., root `AGENTS.md`, this `docs/agents/` directory,
 - Output reports from previous specialist runs
 
 ## Outputs
-- Delegated task packets (one per specialist agent) — see handoff format below
+- Delegated task packets (one per specialist agent) - see handoff format below
 - Integration report after all specialists complete
 - Updated `docs/adr/` entry if a significant decision was made
 - Session handoff file in `docs/sessions/` at end of session or when context is long
+
+## Role Signaling
+- In single-chat interfaces, the orchestrator labels its own responses with
+  `Role: orchestrator`
+- When presenting specialist outputs, the orchestrator names the originating
+  agent explicitly
+- Durable outputs written by the orchestrator must include a `Prepared by`
+  field or equivalent label
 
 ## Task Handoff Format
 Each delegated task must include:

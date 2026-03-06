@@ -42,7 +42,9 @@ maps to `docs/specs/functional/auth.md`).
 A compliance report written to `docs/reports/qa-YYYY-MM-DD[-N].md` containing:
 
 ```markdown
-## QA Report — YYYY-MM-DD
+## QA Report - YYYY-MM-DD
+
+Prepared by: qa-agent
 
 ### Task Reference
 <objective from task packet>
@@ -66,8 +68,8 @@ A compliance report written to `docs/reports/qa-YYYY-MM-DD[-N].md` containing:
 -
 
 ### Verdict
-[ ] PASS — implementation matches specs
-[ ] FAIL — deviations listed above must be resolved before merge
+[ ] PASS - implementation matches specs
+[ ] FAIL - deviations listed above must be resolved before merge
 
 ### Recommended Actions
 -
@@ -78,8 +80,9 @@ A compliance report written to `docs/reports/qa-YYYY-MM-DD[-N].md` containing:
 - Acceptance tests written in `tests/acceptance/` for every functional requirement in scope
 - Each acceptance test file references its source spec by name
 - Compliance report written to `docs/reports/`
+- Compliance report states the producing role explicitly
 - Each deviation is documented with the specific spec reference and the observed behavior
-- Verdict is explicit (PASS or FAIL — no partial verdicts)
+- Verdict is explicit (PASS or FAIL - no partial verdicts)
 
 ## Forbidden
 - Modifying implementation files (`frontend/**`, `backend/**`)

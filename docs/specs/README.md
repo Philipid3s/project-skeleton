@@ -1,21 +1,52 @@
 # Specifications
 
-This folder stores functional and technical specifications before implementation.
+This folder stores functional and technical specifications used by the
+AI-agent system skeleton and by any concrete project built from it.
+
+## What `incubator` Means
+
+`incubator/` is a holding area for draft ideas that may be useful later but are
+not part of the active skeleton contract.
+
+Use `incubator/` for:
+
+- optional reference material
+- experimental specs
+- patterns that a future project may adopt, revise, or discard
+
+Do not treat files in `incubator/` as required defaults for every project built
+from this repository.
+
+By contrast, `technical/` contains active baseline specs for this skeleton and
+project-specific technical specs adopted by a real implementation.
+
+## What `agent-runtime` Means
+
+`agent-runtime` means the execution environment that runs an AI agent.
+
+It is the surrounding system that:
+
+- receives tasks
+- provides context
+- manages tool calls
+- applies limits, retries, and safety rules
+- tracks temporary state while the agent is working
+
+In this repository, `agent-runtime` documents define the default runtime
+architecture for running agents. Projects built from this skeleton are expected
+to either follow these specs or explicitly supersede them with ADRs.
 
 ## Current Structure
 
 ```text
 specs/
+|-- incubator/               # Optional future drafts and experiments
 `-- technical/
-    `-- agent-runtime/
-        |-- examples/
-        |-- state-model.md
-        |-- task.schema.json
-        |-- tool.contract.json
-        `-- runtime-errors.md
+    |-- agent-runtime/       # Active task/tool/retry/state specs
+    `-- <project-specific specs go here>
 ```
 
-## Agent Runtime Contract
+## Agent Runtime Baseline
 
 - `technical/agent-runtime/task.schema.json`
   - Canonical task submission envelope.
@@ -24,10 +55,13 @@ specs/
 - `technical/agent-runtime/runtime-errors.md`
   - Error classification and retry semantics.
 - `technical/agent-runtime/state-model.md`
-  - Short-term vs long-term memory model and promotion/retrieval rules.
+  - Memory model and promotion/retrieval rules.
 - `technical/agent-runtime/examples/`
   - Fixture payloads and expected outcomes for schema validation.
 
-Related ADR:
+Status:
+- These files are normative skeleton requirements unless superseded by later ADRs.
+
+Related ADRs:
 - `docs/adr/0003-agent-runtime-contract-and-retry-policy.md`
 - `docs/adr/0004-agent-state-model-short-term-vs-long-term-memory.md`

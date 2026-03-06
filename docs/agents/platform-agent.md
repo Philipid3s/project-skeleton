@@ -19,20 +19,21 @@ backend/.env.example
 
 ## Inputs
 - Task packet from orchestrator
-- Stack ADR (read-only — to align runtime config with chosen technology)
+- Runtime and stack ADRs (read-only - to align infrastructure with the
+  baseline agent architecture and chosen implementation technology)
 - Security requirements or CI requirements from orchestrator
 
 ## Outputs
 - Changed files list (within owned paths)
 - Risk summary (breaking compose changes, new required env vars, CI gate changes)
-- Verification run result (# TODO: define after CI stack is chosen)
+- Verification run result (# TODO: define after implementation and CI stack selection)
 
 ## Done Criteria
 - All acceptance criteria from the task packet met
 - No files modified outside owned paths
 - New environment variables documented in the relevant `.env.example`
-- Docker build succeeds locally (# TODO: define build command after stack selection)
-- CI pipeline passes (# TODO: define after CI stack is chosen)
+- Docker build succeeds locally (# TODO: define build command after implementation stack selection)
+- CI pipeline passes (# TODO: define after implementation and CI stack selection)
 - No secrets committed
 
 ## Forbidden

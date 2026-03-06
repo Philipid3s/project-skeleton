@@ -1,12 +1,17 @@
-# Project Skeleton
+# AI-Agent System Skeleton
 
-Stack-agnostic full-stack starter template with a built-in multi-agent AI workflow — orchestrator + specialist agents (frontend, backend, docs, platform, QA) with defined ownership and handoff protocols.
+Opinionated starter template for building AI-agent systems with a built-in
+multi-agent development workflow: orchestrator + specialist agents (frontend,
+backend, docs, platform, QA), defined ownership boundaries, and a default agent
+runtime contract.
 
 ## Goals
 
-- Keep architecture and process structure ready from day one.
-- Delay language and framework decisions until project kickoff.
-- Provide consistent docs, ADR, API spec, and container placeholders.
+- Provide a strong baseline for agent task execution, tool calling, retries,
+  and memory management.
+- Keep implementation-stack choices explicit and reviewable through ADRs.
+- Provide consistent docs, ADRs, runtime specs, API contracts, and container
+  templates from day one.
 
 ## Quick Start
 
@@ -18,18 +23,22 @@ cp backend/.env.example backend/.env
 docker compose -f docker-compose.dev.yml up --build
 ```
 
-The default service containers are placeholders and must be replaced once your stack is chosen.
+The default service containers are placeholders around an active agent-runtime
+baseline. Replace them with your chosen implementation stack while preserving
+the runtime contracts in `docs/specs/technical/agent-runtime/`.
 
 ## Project Structure
 
 ```text
 .
-|-- frontend/                 # Frontend codebase (chosen later)
-|-- backend/                  # Backend codebase (chosen later)
+|-- frontend/                 # Frontend UI for operators or end users
+|-- backend/                  # APIs, workers, and domain logic
 |-- docs/
 |   |-- adr/                  # Architecture Decision Records
 |   |-- api/                  # OpenAPI contract
-|   |-- specs/                # Functional and technical specs
+|   |-- specs/
+|   |   `-- technical/
+|   |       `-- agent-runtime/ # Core task/tool/retry/state specs
 |   `-- guides/               # Team guides and onboarding docs
 |-- docker-compose.yml        # Production compose template
 `-- docker-compose.dev.yml    # Development compose template
@@ -37,10 +46,15 @@ The default service containers are placeholders and must be replaced once your s
 
 ## How To Use This Template
 
-1. Pick frontend and backend stacks.
-2. Replace `frontend/Dockerfile*` and `backend/Dockerfile*`.
-3. Implement app entrypoints and package management in each service folder.
-4. Update `docs/api/openapi.yml` and add ADRs in `docs/adr/`.
+1. Review ADR 0002, ADR 0003, and ADR 0004 to understand the default
+   multi-agent and runtime architecture.
+2. Choose the implementation stack for the frontend, backend, workers, and
+   deployment tooling.
+3. Replace `frontend/Dockerfile*` and `backend/Dockerfile*`.
+4. Implement services around the runtime baseline documented in
+   `docs/specs/technical/agent-runtime/`.
+5. Update `docs/api/openapi.yml` and add ADRs in `docs/adr/` for stack choices
+   and major architecture decisions.
 
 ## Contributing
 

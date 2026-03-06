@@ -29,7 +29,7 @@ open until the stack and CI pipeline are chosen.
 ## Consequences
 - Clear ownership prevents merge conflicts between concurrent agents.
 - Agent contracts serve as machine-readable specs for AI agents and onboarding docs for humans.
-- Stack-specific sections (lint, test commands, done criteria) are placeholder TODOs
-  until the technology stack is decided (see future ADR).
+- Service-specific sections (lint, test commands, done criteria) are placeholder
+  TODOs until the implementation stack is decided (see future ADR).
 - The orchestrator role adds coordination overhead; acceptable given the conflict
   prevention benefit at scale.

@@ -1,4 +1,7 @@
-# Handoff — YYYY-MM-DD
+# Handoff - YYYY-MM-DD
+
+## Prepared By
+<!-- Agent role that produced this handoff, usually `orchestrator`. -->
 
 ## Session Summary
 <!-- One or two sentences: what was worked on and what was achieved. -->

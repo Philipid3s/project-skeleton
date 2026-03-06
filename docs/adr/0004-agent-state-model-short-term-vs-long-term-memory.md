@@ -7,13 +7,14 @@ Accepted
 2026-03-03
 
 ## Context
-The runtime contract defines task and tool interfaces, but the project has no
-standard model for agent memory. Without a shared model, implementations risk
-mixing ephemeral execution context with durable knowledge, causing stale data,
-privacy risk, and inconsistent behavior across sessions.
+The runtime contract defines task and tool interfaces, but the project also
+needs a standard model for agent memory. Without a shared model,
+implementations risk mixing ephemeral execution context with durable knowledge,
+causing stale data, privacy risk, and inconsistent behavior across sessions.
 
 ## Decision
-Adopt a two-layer state model with explicit promotion from short-term to long-term.
+Adopt a two-layer state model with explicit promotion from short-term to
+long-term.
 
 1. Short-term memory (working state)
    - Scope: current task/session execution context only.

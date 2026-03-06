@@ -7,8 +7,8 @@ Accepted
 2026-03-03
 
 ## Context
-The project has a multi-agent development model but does not yet define a runtime
-contract for production agent execution. Without a shared contract, different
+The project has a multi-agent development model and is intended to serve as an
+AI-agent system skeleton. Without a shared runtime contract, different
 executors and tools can diverge in request shape, failure handling, and retry
 behavior. This increases integration risk, makes observability inconsistent, and
 creates non-deterministic behavior across environments.

@@ -6,8 +6,8 @@
 - Git
 
 Optional (if running without Docker):
-- Any frontend runtime/toolchain you choose later
-- Any backend runtime/toolchain you choose later
+- Frontend runtime/toolchain chosen for your operator or user interface
+- Backend or worker runtime/toolchain chosen for your API and agent executors
 
 ## Quick Start (Docker)
 
@@ -25,12 +25,16 @@ cp backend/.env.example backend/.env
 docker compose -f docker-compose.dev.yml up --build
 ```
 
-The provided containers are placeholders. Replace Dockerfiles and startup commands after selecting your stack.
+The provided containers are placeholders. Replace Dockerfiles and startup
+commands after selecting your implementation stack, while keeping the baseline
+runtime contracts in `docs/specs/technical/agent-runtime/`.
 
 ## Local Development (Without Docker)
 
-Set up `frontend/` and `backend/` using your selected languages/frameworks, then run each app with its own native dev command.
+Set up `frontend/` and `backend/` using your selected languages/frameworks, then
+run each service with its own native dev command.
 
 ## Testing
 
-Define and document test commands for both services once your stack is chosen. Keep docs and CI in sync.
+Define and document test commands for all implemented services once your stack
+is chosen. Keep docs, CI, and the agent contracts in sync.
