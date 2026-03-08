@@ -26,7 +26,7 @@
     "*.js": "${capture}.test.js, ${capture}.spec.js",
     "docker-compose.yml": "docker-compose.*.yml",
     ".env.example": ".env.*.example",
-    "AGENTS.md": "CLAUDE.md"
+    "AGENTS.md": "CLAUDE.md, GEMINI.md"
   },
 
   // ─── Git ──────────────────────────────────────────────────────────────────
