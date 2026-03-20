@@ -4,51 +4,58 @@
 
 orchestrator:
   paths:
-    - "**"  # Full access — conflict resolution and cross-cutting files only
+    - '**' # Full access, conflict resolution and cross-cutting files only
   primary_write_paths:
-    - "AGENTS.md"
-    - "docs/agents/**"
-    - "docs/sessions/**"   # Session handoff files
-    - "docs/adr/**"        # When no specialist is assigned the decision
-  note: Must not make domain changes directly. Delegates to specialists.
+    - 'AGENTS.md'
+    - 'docs/agents/**'
+    - 'docs/sessions/**' # Session handoff files
+  note: Must not make domain changes directly. Delegates to specialists and
+    resolves conflicts. ADR direction is orchestrator-owned; ADR authoring is
+    docs-agent-owned.
 
 frontend-agent:
   paths:
-    - "frontend/**"
+    - 'frontend/**'
 
 backend-agent:
   paths:
-    - "backend/**"
+    - 'backend/**'
 
 docs-agent:
   paths:
-    - "docs/**"
+    - 'docs/**'
   excludes:
-    - "docs/sessions/**"   # Owned by orchestrator
-    - "docs/agents/**"     # Owned by orchestrator
-    - "docs/reports/**"    # Owned by qa-agent
+    - 'docs/sessions/**' # Owned by orchestrator
+    - 'docs/agents/**' # Owned by orchestrator
+    - 'docs/reports/**' # Owned by qa-agent
+  note: Owns docs authoring including ADR files in `docs/adr/**`. The
+    orchestrator decides when an ADR is required or approved.
 
 qa-agent:
   read_paths:
-    - "docs/specs/**"
-    - "docs/api/openapi.yml"
-    - "docs/adr/**"
-    - "frontend/**"
-    - "backend/**"
+    - 'AGENTS.md'
+    - 'docs/agents/**'
+    - 'docs/sessions/**'
+    - 'docs/specs/**'
+    - 'docs/api/openapi.yml'
+    - 'docs/adr/**'
+    - 'frontend/**'
+    - 'backend/**'
   write_paths:
-    - "docs/reports/**"         # Compliance reports
-    - "tests/acceptance/**"     # Spec-driven acceptance tests
-  note: Read-only on implementation and spec files. Writes acceptance tests and compliance reports.
+    - 'docs/reports/**' # Compliance reports
+    - 'tests/acceptance/**' # Spec-driven acceptance tests
+  note: Read-only on implementation and spec files. Writes acceptance tests and
+    compliance reports.
 
 platform-agent:
   paths:
-    - "docker-compose.yml"
-    - "docker-compose.dev.yml"
-    - "frontend/Dockerfile"
-    - "frontend/Dockerfile.dev"
-    - "backend/Dockerfile"
-    - "backend/Dockerfile.dev"
-    - ".github/**"
-    - ".env.example"
-    - "frontend/.env.example"
-    - "backend/.env.example"
+    - 'docker-compose.yml'
+    - 'docker-compose.dev.yml'
+    - 'frontend/Dockerfile'
+    - 'frontend/Dockerfile.dev'
+    - 'backend/Dockerfile'
+    - 'backend/Dockerfile.dev'
+    - '.github/**'
+    - '.env.example'
+    - 'frontend/.env.example'
+    - 'backend/.env.example'
