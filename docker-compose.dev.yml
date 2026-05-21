@@ -1,4 +1,4 @@
-name: project-skeleton-dev
+name: starter-app-dev
 
 services:
   frontend:
@@ -10,7 +10,8 @@ services:
     volumes:
       - ./frontend:/workspace
     env_file:
-      - ./frontend/.env.local
+      - path: ./frontend/.env.local
+        required: false
     depends_on:
       - backend
 
@@ -23,4 +24,5 @@ services:
     volumes:
       - ./backend:/workspace
     env_file:
-      - ./backend/.env
+      - path: ./backend/.env
+        required: false

@@ -1,65 +1,69 @@
-# AI-Agent System Skeleton
+# Full-Stack Project Skeleton
 
-Opinionated starter template for building AI-agent systems with a built-in
-multi-agent development workflow: orchestrator + specialist agents (frontend,
-backend, docs, platform, QA), defined ownership boundaries, and a default agent
-runtime contract.
+Minimal starter for a backend service plus a frontend app.
 
-## Goals
+## What You Get
 
-- Provide a strong baseline for agent task execution, tool calling, retries,
-  and memory management.
-- Keep implementation-stack choices explicit and reviewable through ADRs.
-- Provide consistent docs, ADRs, runtime specs, API contracts, and container
-  templates from day one.
+- `frontend/` for the UI
+- `backend/` for APIs, workers, and domain logic
+- `docs/` for architecture notes, API docs, and project guidance
+- `docker-compose.yml` and `docker-compose.dev.yml` as deployment templates
+- `.env.example` files to document required environment variables
+- `AGENTS.md` for lightweight AI coding-agent instructions
+- `SECURITY.md` for baseline secret-handling and agent safety rules
+- `scripts/verify-template.ps1` for template-level checks before stack selection
+
+## Use It For
+
+- Starting a new full-stack project
+- Choosing your own frontend and backend stack
+- Adding tests, CI, and deployment once the stack is selected
 
 ## Quick Start
 
 ```bash
-git clone <repo-url> && cd <project>
+git clone <repo-url>
+cd <project>
 cp .env.example .env
 cp frontend/.env.example frontend/.env.local
 cp backend/.env.example backend/.env
 docker compose -f docker-compose.dev.yml up --build
 ```
 
-The default service containers are placeholders around an active agent-runtime
-baseline. Replace them with your chosen implementation stack while preserving
-the runtime contracts in `docs/specs/technical/agent-runtime/`.
+The Dockerfiles and service commands are placeholders. Replace them with your
+chosen stack before treating the project as runnable.
 
 ## Project Structure
 
 ```text
 .
-|-- frontend/                 # Frontend UI for operators or end users
-|-- backend/                  # APIs, workers, and domain logic
-|-- docs/
-|   |-- adr/                  # Architecture Decision Records
-|   |-- api/                  # OpenAPI contract
-|   |-- specs/
-|   |   `-- technical/
-|   |       `-- agent-runtime/ # Core task/tool/retry/state specs
-|   `-- guides/               # Team guides and onboarding docs
-|-- docker-compose.yml        # Production compose template
-`-- docker-compose.dev.yml    # Development compose template
+|-- frontend/      # Frontend app
+|-- backend/       # Backend service
+|-- docs/          # Architecture, specs, and guides
+|-- docker-compose.yml
+`-- docker-compose.dev.yml
 ```
 
-## How To Use This Template
+## Repository Rules
 
-1. Rename the template to your project name and remove skeleton-specific clone
-   links or repository references.
-2. Review ADR 0002, ADR 0003, and ADR 0004 to understand the default
-   multi-agent and runtime architecture.
-3. Choose the implementation stack for the frontend, backend, workers, and
-   deployment tooling.
-4. Replace `frontend/Dockerfile*` and `backend/Dockerfile*`.
-5. Implement services around the runtime baseline documented in
-   `docs/specs/technical/agent-runtime/`.
-6. Update `docs/api/openapi.yml` and add ADRs in `docs/adr/` for stack choices
-   and major architecture decisions.
+- Keep architecture decisions in `docs/adr/`
+- Document environment variables in `.env.example` files
+- Never commit real `.env` files or secrets
+- Keep changes small and verifiable
 
-## Contributing
+## Template Verification
 
-1. Branch from `master`.
-2. Use the PR template in `.github/PULL_REQUEST_TEMPLATE.md`.
-3. Add an ADR in `docs/adr/` for major architecture decisions.
+Before selecting a stack, run:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/verify-template.ps1
+```
+
+After selecting a frontend and backend stack, replace this with real lint, test,
+build, and deployment checks.
+
+## Optional AI-Agent Workflow
+
+This repository also includes optional agentic workflow notes under `docs/`
+for teams that want to use AI coding agents with stronger coordination and
+ownership rules. They are not required for a normal backend/frontend starter.

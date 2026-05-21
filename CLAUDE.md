@@ -1,7 +1,7 @@
 # CLAUDE.md
 
 Claude Code entrypoint for this repository.
-The canonical multi-agent instructions live in [`AGENTS.md`](AGENTS.md) so the
+The canonical repository instructions live in [`AGENTS.md`](AGENTS.md) so the
 same workflow can be used from other agentic IDEs and CLIs.
 
 @AGENTS.md

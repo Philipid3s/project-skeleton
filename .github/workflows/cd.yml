@@ -6,18 +6,11 @@ on:
 
 jobs:
   deploy:
-    name: Deploy to Production
+    name: Deployment Placeholder
     runs-on: ubuntu-latest
-    environment: production
     steps:
       - uses: actions/checkout@v4
-
-      - name: Build & push Docker images
+      - name: Configure deployment
         run: |
-          echo "TODO: configure registry push"
-          # docker buildx build --push ...
-
-      - name: Deploy
-        run: |
-          echo "TODO: configure deployment step"
-          # e.g. kubectl rollout / SSH / etc.
+          echo "This repository ships with deployment placeholders."
+          echo "Replace this workflow with the target environment's build and deploy steps."

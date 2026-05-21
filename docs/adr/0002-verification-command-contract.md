@@ -1,4 +1,4 @@
-# ADR 0006: Verification Command Contract
+# ADR 0002: Verification Command Contract
 
 ## Status
 Accepted
@@ -7,9 +7,9 @@ Accepted
 2026-03-06
 
 ## Context
-Agentic development works best when every project exposes a small, predictable
-set of verification commands. This skeleton cannot choose language-specific
-tools yet, but it should define the contract that future projects must fill in.
+Every project should expose a small, predictable set of verification commands.
+This skeleton cannot choose language-specific tools yet, but it should define
+the contract that future projects must fill in.
 
 ## Decision
 Each concrete project built from this skeleton must define and document standard

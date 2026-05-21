@@ -16,7 +16,9 @@ Closes #
 - [ ] Docs updated (if needed)
 - [ ] `docs/adr/` updated (if architecture changed)
 - [ ] `.env.example` updated (if new env vars added)
+- [ ] `AGENTS.md` updated (if setup, commands, or workflow changed)
+- [ ] Security impact considered and secrets excluded
 - [ ] No secrets or credentials committed
 
 ## How to Test
-Steps to verify this change works correctly.
+Commands or steps used to verify this change.

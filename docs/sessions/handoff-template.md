@@ -1,7 +1,7 @@
 # Handoff - YYYY-MM-DD
 
 ## Prepared By
-<!-- Agent role that produced this handoff, usually `orchestrator`. -->
+<!-- Person or tool that produced this handoff. -->
 
 ## Session Summary
 <!-- One or two sentences: what was worked on and what was achieved. -->
@@ -25,7 +25,7 @@
 -
 
 ## Next Task
-<!-- The single next thing the orchestrator or a specialist agent should do. -->
+<!-- The single next thing the next session should do. -->
 
 ## Files Modified This Session
 <!-- List files changed, so the next agent knows where to look. -->
