@@ -5,11 +5,25 @@
       "Bash(docker compose *)",
       "Bash(git status)",
       "Bash(git diff *)",
-      "Bash(git log *)"
+      "Bash(git log *)",
+      "Bash(powershell -ExecutionPolicy Bypass -File scripts/verify-template.ps1)"
     ],
     "deny": [
       "Bash(rm -rf *)",
       "Bash(git push --force *)"
+    ]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -ExecutionPolicy Bypass -File scripts/verify-template.ps1"
+          }
+        ]
+      }
     ]
   }
 }
